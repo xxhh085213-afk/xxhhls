@@ -1,0 +1,22 @@
+# OpenAI Config Info
+api_key               : 
+model_name            : 
+base_url              : 
+
+
+
+# Agent Config Info
+routing_strategy      : "hybrid"        # Options: code , reason , hybrid 
+col_select_type       : "entity"        # Options: all, cot, entity , random
+
+
+samples_nums          : 100           # -1 or samples_nums
+workers_num           : 20
+
+
+# Dataset Config Info
+dataset               : tabfact      # Options: wikitq, tabfact, tabbench
+task_run_ids          : 1
+result_path           : "result/run${task_run_ids}_results/${dataset}/${model_name}"
+dataset_path          :  "dataset/${dataset}.jsonl"   
+task_name             : "${dataset}-${model_name}-cols_${col_select_type}-routing_${routing_strategy}" 
